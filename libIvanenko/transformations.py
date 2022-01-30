@@ -48,6 +48,6 @@ def invdht(x):
     return [a/len(x) for a in dht(x)]
 
 def harmonicAmp(x, n):
-    return abs(dft(x)[n])
+    return abs(dft(x)[n])/len(x)
 
 
