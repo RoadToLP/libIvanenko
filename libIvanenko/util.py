@@ -10,7 +10,7 @@ def generateFourierCore(n):
     for i in range(n):
         part = []
         for j in range(n):
-            part.append(complex(round(math.cos(-i*j*angle), 2), round(math.sin(-i*j*angle), 2)))
+            part.append(complex(round(math.cos(-i*j*angle), 6), round(math.sin(-i*j*angle), 6)))
         res.append(part)
     return res
 
