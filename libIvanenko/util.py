@@ -20,7 +20,7 @@ def generateHartleyCore(n):
     for i in range(n):
         part = []
         for j in range(n):
-            part.append(math.cos(i*j*angle) + math.sin(i*j*angle))
+            part.append(round(math.cos(i*j*angle), 6) + round(math.sin(i*j*angle), 6))
         res.append(part)
     return res
 
