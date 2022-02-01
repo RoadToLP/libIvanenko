@@ -30,6 +30,9 @@ def linearExtract(x, n):
 def linearExtract2d(x, n, m):
     return 0 if (n >= len(x) or n < 0 or m >= len(x[0]) or m < 0) else x[n][m]
 
+def roundExtract(x, n):
+    return x[n%len(x)]
+
 # def roundError(n):
 #     if abs(round(n)-n) < 0.001:
 #         return [round(n), True]

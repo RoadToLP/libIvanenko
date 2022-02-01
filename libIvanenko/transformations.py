@@ -50,4 +50,16 @@ def invdht(x):
 def harmonicAmp(x, n):
     return abs(dft(x)[n])/len(x)
 
+def fastDft(x):
+    if len(x) <= 2:
+        return dft(x)
+    G = fastDft([x[i] for i in range(0, len(x), 2)])
+    H = fastDft([x[i] for i in range(1, len(x), 2)])
+    res = []
+    for k in range(len(x)):
+        res.append(roundExtract(G, k) + genCorePart(len(x), k) * roundExtract(H, k))
+    return res
+
+
+
 
