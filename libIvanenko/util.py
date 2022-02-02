@@ -33,6 +33,12 @@ def linearExtract2d(x, n, m):
 def roundExtract(x, n):
     return x[n%len(x)]
 
+def findMinDelimiter(l):
+    for i in range(2, int(l**(0.5))+1):
+        if l % i == 0:
+            return i
+    return -1
+
 # def roundError(n):
 #     if abs(round(n)-n) < 0.001:
 #         return [round(n), True]

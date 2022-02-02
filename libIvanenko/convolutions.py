@@ -46,12 +46,14 @@ def lconvo2dalg(x, h):
     return y
 
 def sectionConvo(x, h):
-    if (len(h) % len(x)) != 0:
-        raise ArithmeticError("asdasd")
-    l = len(x)*2-1
+    major, minor = (x, h) if len(x) > len(h) else (h, x)
+    l = findMinDelimiter(len(major))
+    if l == -1:
+        return 0
     out = [0]*(len(x)+len(h)-1)
-    for i in range(0, len(h), len(x)):
-        for j, n in enumerate(lconvo(x, h[i:i+len(x)])):
+    for i in range(0, len(major), l):
+        print(minor, major[i:i+l])
+        for j, n in enumerate(lconvo(minor, major[i:i+l])):
             out[i+j] += n
 
     return out
